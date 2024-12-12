@@ -1,0 +1,5 @@
+2024-12-11 18:24:05,573 - ERROR - Unexpected error: 'CrisisCoreCLI' object has no attribute 'convert_format'
+2024-12-11 18:24:12,101 - ERROR - Unexpected error: 'CrisisCoreCLI' object has no attribute 'resize_image'
+2024-12-11 18:24:15,990 - ERROR - Unexpected error: 'CrisisCoreCLI' object has no attribute 'rotate_image'
+2024-12-11 18:24:18,482 - ERROR - Unexpected error: 'CrisisCoreCLI' object has no attribute 'enhance_image'
+2024-12-11 18:24:21,440 - ERROR - Unexpected error: 'CrisisCoreCLI' object has no attribute 'view_history'
