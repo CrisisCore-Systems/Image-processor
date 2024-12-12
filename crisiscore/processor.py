@@ -64,3 +64,29 @@ class ImageProcessor:
             results.append((image_file, success))
             
         return results
+    def apply_effects(self, image: Image.Image, effects: dict) -> Image.Image:
+        """Apply various effects to the image."""
+        from .effects import ImageEffects
+        
+        if 'filter' in effects:
+            image = ImageEffects.apply_filter(image, effects['filter'])
+        
+        if 'color_adjust' in effects:
+            adj = effects['color_adjust']
+            image = ImageEffects.adjust_colors(
+                image,
+                brightness=adj.get('brightness', 1.0),
+                contrast=adj.get('contrast', 1.0),
+                saturation=adj.get('saturation', 1.0)
+            )
+        
+        if 'watermark' in effects:
+            wm = effects['watermark']
+            image = ImageEffects.add_watermark(
+                image,
+                text=wm.get('text', '© CrisisCore'),
+                position=wm.get('position', None),
+                opacity=wm.get('opacity', 0.5)
+            )
+            
+        return image
